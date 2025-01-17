@@ -1,0 +1,491 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #1e1e1e; /* Dark gray */
+    color: #e0e0e0; /* Light gray */
+}
+
+main {
+    padding: 20px;
+}
+
+/* Hero Section */
+.video-edit-hero {
+    text-align: center;
+    background: linear-gradient(135deg, #2c2c2c, #444); /* Gradient dark gray */
+    color: white;
+    padding: 50px 20px;
+    margin-bottom: 30px;
+    animation: fadeIn 1.5s ease-out;
+}
+
+.video-edit-hero h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #007bff; /* Blue for heading */
+}
+
+.video-edit-hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+    color: #ccc;
+}
+
+/* video Editing Tools Section */
+.video-edit-tools {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.tool {
+    background: #2c2c2c; /* Medium gray */
+    border: 1px solid #444;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideUp 1s ease-out;
+}
+
+.tool:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+
+.tool h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #f5f5f5; /* Blue for tool titles */
+}
+
+.tool p {
+    font-size: 1rem;
+    margin: 10px 0;
+    color: #ccc;
+}
+
+.cta-btn {
+    display: inline-block;
+    text-decoration: none;
+    background: linear-gradient(135deg, #444, #666); /* Dark to medium gray */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cta-btn:hover {
+    background: linear-gradient(135deg, #666, #888); /* Lighter gray on hover */
+    transform: scale(1.05);
+}
+
+/* Upload Form Styling */
+form {
+    margin-top: 20px;
+    padding: 20px;
+    background: #2c2c2c; /* Medium gray */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-out;
+}
+
+form .form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #007bff; /* Blue for labels */
+    font-weight: bold;
+    font-size: 14px;
+}
+
+input[type="file"],
+input[type="number"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+    background: #1e1e1e; /* Dark gray */
+    color: #e0e0e0; /* Light gray */
+    border: 1px solid #444;
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+input[type="file"]:hover,
+input[type="number"]:hover {
+    border-color: #666;
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+input[type="file"]:focus,
+input[type="number"]:focus {
+    border-color: #888;
+    outline: none;
+    box-shadow: 0 0 8px rgba(136, 136, 136, 0.5);
+}
+
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    background: linear-gradient(135deg, #444, #666); /* Dark to medium gray */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #666, #888); /* Lighter gray */
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .tool {
+        width: 100%;
+    }
+}
+
+/* Split video Section */
+form {
+    margin-top: 20px;
+    padding: 20px;
+    background: #2c2c2c; /* Medium gray background */
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-out;
+}
+form .form-group {
+    margin-bottom: 20px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    margin-top: 10px;
+    color: #e0e0e0; /* Light gray text */
+    font-weight: bold;
+    font-size: 15px;
+}
+input[type="file"],
+input[type="number"] {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    background: #1e1e1e; /* Dark gray input background */
+    color: #e0e0e0; /* Light gray text */
+    border: 1px solid #444; /* Subtle border */
+    border-radius: 10px;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+input[type="file"]:hover,
+input[type="number"]:hover {
+    border-color: #666; /* Slightly lighter gray on hover */
+    box-shadow: inset 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+input[type="file"]:focus,
+input[type="number"]:focus {
+    border-color: #888; /* Lighter gray when focused */
+    outline: none;
+    box-shadow: 0 0 8px rgba(136, 136, 136, 0.5); /* Glow effect */
+}
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px 0;
+    margin-top: 10px;
+    background: linear-gradient(135deg, #333, #555); /* Dark to medium gray */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.2s, background 0.3s;
+}
+button[type="submit"]:hover {
+    background: linear-gradient(135deg, #555, #777); /* Slightly lighter gray */
+    transform: scale(0.5);
+}
+/* Container Styling */
+.container {
+    max-width: 700px;
+    margin: 50px auto;
+    padding: 25px;
+    background: #2c2c2c; /* Medium gray background */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* Header Styling */
+h1, h2 {
+    text-align: center;
+    color: #f5f5f5; /* Light gray for headings */
+    margin-bottom: 20px;
+}
+
+/* List Styling */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 15px;
+}
+
+/* Buttons and Links */
+a {
+    color: #cfcfcf;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #ffffff;
+}
+
+button {
+    padding: 12px 20px;
+    background: linear-gradient(135deg, #333, #555); /* Dark to medium gray */
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #555, #777); /* Slightly lighter gray */
+    transform: scale(1.05);
+}
+
+/* Clip Styling */
+.clips {
+    margin-top: 20px;
+}
+
+.clip {
+    margin-bottom: 15px;
+    background: #383838; /* Darker gray */
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.clip:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.clip video {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    outline: none;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: linear-gradient(135deg, #444, #666); /* Dark to medium gray */
+    color: white;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 14px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.download-btn:hover {
+    background: linear-gradient(135deg, #555, #777); /* Slightly lighter gray */
+    transform: scale(1.1);
+}
+
+/* Download All Section */
+.download-all {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.download-all a {
+    display: inline-block;
+    padding: 14px 30px;
+    background: linear-gradient(135deg, #333, #555);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.download-all a:hover {
+    background: linear-gradient(135deg, #555, #777);
+    transform: translateY(-3px);
+}
+
+/* Upload Another Section */
+.upload-another {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.upload-another button {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #333, #555);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.upload-another button:hover {
+    background: linear-gradient(135deg, #555, #777);
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Split Section */
+/* Video Section Styling */
+.video-section {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center; /* Center the content */
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px; /* Limit the maximum width */
+    height: 450px; /* Set a fixed height */
+    background: #2c2c2c; /* Dark gray background for the container */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3); /* Soft shadow */
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%; /* Adjust the video to take full width and height */
+    object-fit: cover; /* Cover the container without distorting the video */
+}
+
+.video-container:hover {
+    transform: translateY(-8px); /* Slight hover effect */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35); /* Deeper shadow on hover */
+}
+
+/* Video Download Button */
+.video-download-btn {
+    display: inline-block;
+    padding: 12px 18px;
+    background: linear-gradient(135deg, #4d4d4d, #666); /* Subtle gradient */
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 16px;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.video-download-btn:hover {
+    background: linear-gradient(135deg, #555, #777); /* Slightly lighter gray */
+    transform: scale(1.1);
+}
+
+/* Upload Another Section */
+.upload-another {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.upload-another button {
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #333, #555);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, background 0.3s;
+}
+
+.upload-another button:hover {
+    background: linear-gradient(135deg, #555, #777);
+    transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

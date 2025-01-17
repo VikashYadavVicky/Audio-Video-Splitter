@@ -1,0 +1,14 @@
+{% extends 'video_edit/base_video_index.html' %}
+
+{% block title %}Upload Video{% endblock %}
+
+{% block content %}
+<section class="upload-section">
+    <h2>Upload Your Video</h2>
+    <form action="{% url 'video_edit:extractvideoForaudioupload' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload</button>
+    </form>
+</section>
+{% endblock content %}

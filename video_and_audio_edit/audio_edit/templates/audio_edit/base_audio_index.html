@@ -1,0 +1,60 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Audio Edit{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'home/css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'audio_edit/css/all_page_css.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="/" class="navbar-logo">Self Edit</a>
+                <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="navbar-links" id="navbar-links">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Sign up</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="audio-edit-hero">
+            <h1>Welcome to Audio Edit</h1>
+            <p>Edit and enhance your audio with powerful tools.</p>
+        </section>
+
+        <!-- Dynamic Content Section -->
+        <section class="dynamic-content">
+            {% block content %}
+            {% endblock content %}
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 Video and Audio Edit. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#video-section">Video Tools</a></li>
+                <li><a href="#audio-section">Audio Tools</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="{% static 'home/js/navbar.js' %}"></script>
+</body>
+</html>

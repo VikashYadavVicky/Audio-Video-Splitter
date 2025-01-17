@@ -1,0 +1,40 @@
+{% extends 'audio_edit/base_audio_index.html' %}
+
+{% block title %}Split Audio{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Upload and Split Audio</h1>
+        
+        {% if sliced_audio_url %}
+        <div class="audio-container">
+            <h2>Sliced Audio:</h2>
+            <audio controls>
+                <source src="{{ sliced_audio_url }}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <br>
+            <a href="{{ sliced_audio_url }}" download>
+                <button class="download-btn">Download Sliced Audio</button>
+            </a>
+            <div class="upload-another">
+                <button onclick="location.href='{{ request.path }}';">Upload Another File</button>
+            </div>
+        </div>
+        {% else %}
+        <form method="POST" enctype="multipart/form-data" action="{% url 'audio_edit:upload_audio_and_split' %}" class="form-entry">
+            {% csrf_token %}
+            <label for="audio_file">Audio File:</label>
+            <input type="file" name="audio_file" accept="audio/*" required>
+            
+            <label for="start_time">Start Time (in seconds):</label>
+            <input type="number" name="start_time" min="0" required>
+            
+            <label for="end_time">End Time (in seconds):</label>
+            <input type="number" name="end_time" min="0" required>
+
+            <button type="submit">Upload and Split</button>
+        </form>
+        {% endif %}
+    </div>
+{% endblock content%}

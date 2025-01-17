@@ -1,0 +1,12 @@
+{% extends 'video_edit/base_video_index.html' %}
+
+{% block title %}Split Video{% endblock %}
+
+{% block content %}
+<section class="upload-section">
+    <h2>Extract Audio</h2>
+    <button onclick="window.location.href='{% url "video_edit:extractvideoForaudioupload" %}'" class="upload-btn">
+        UPLOAD
+    </button>
+</section>
+{% endblock content %}

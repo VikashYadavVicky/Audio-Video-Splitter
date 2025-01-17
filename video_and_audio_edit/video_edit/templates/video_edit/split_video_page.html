@@ -1,0 +1,41 @@
+{% extends 'video_edit/base_video_index.html' %}
+
+{% block title %}Split Video{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Upload and Split Video</h1>
+        
+        {% if sliced_video_url %}
+        <div class="video-section">
+            <h2>Sliced Video:</h2>
+            <div class="video-container">
+                <video controls>
+                    <source src="{{ sliced_video_url }}" type="video/mp4">  
+                    Your browser does not support the Video element.
+                </video>
+            </div>
+            <a href="{{ sliced_video_url }}" download>
+                <button class="download-btn">Download Sliced Video</button>
+            </a>
+            <div class="upload-another">
+                <button onclick="location.href='{{ request.path }}';">Upload Another File</button>
+            </div>
+        </div>
+        {% else %}
+        <form method="POST" enctype="multipart/form-data" action="{% url 'video_edit:upload_video_and_split' %}" class="form-entry">
+            {% csrf_token %}
+            <label for="video_file">Video File:</label>
+            <input type="file" name="video_file" accept="video/*" required>
+            
+            <label for="start_time">Start Time (in seconds):</label>
+            <input type="number" name="start_time" min="0" required>
+            
+            <label for="end_time">End Time (in seconds):</label>
+            <input type="number" name="end_time" min="0" required>
+
+            <button type="submit">Upload and Split</button>
+        </form>
+        {% endif %}
+    </div>
+{% endblock content %}

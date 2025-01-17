@@ -1,0 +1,23 @@
+{% extends 'audio_edit/base_audio_index.html' %}
+
+{% block title %}Audio Edit Tools{% endblock %}
+
+{% block content %}
+<section class="audio-edit-tools">
+    <div class="tool">
+        <h2>Split Audio</h2>
+        <p>Cut your audio into multiple segments effortlessly.</p>
+        <a href="{% url 'audio_edit:upload_audio_and_split' %}" class="cta-btn">Try Now</a>
+    </div>
+    <div class="tool">
+        <h2>Split Audio Equally</h2>
+        <p>Divide your audio into equal parts in seconds.</p>
+        <a href="{% url 'audio_edit:split_audio_equally' %}" class="cta-btn">Try Now</a>
+    </div>
+    <div class="tool">
+        <h2>Merge Audios</h2>
+        <p>Combine multiple audios into a single seamless file.</p>
+        <a href="{% url 'audio_edit:upload_and_merge_audio' %}" class="cta-btn">Try Now</a>
+    </div>
+</section>
+{% endblock content%}

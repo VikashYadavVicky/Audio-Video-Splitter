@@ -1,0 +1,43 @@
+{% extends 'video_edit/base_video_index.html' %}
+
+{% block title %}Split Video Equally{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Video Clips</h1>
+        {% if clips %}
+            <div class="clips">
+                <h2>Generated Clips:</h2>
+                {% for clip in clips %}
+                <div class="clip">
+                    <video controls>
+                        <source src="{{ clip }}" type="video/mp4">
+                        Your browser does not support the video element.
+                    </video>
+                    <br>
+                    <a href="{{ clip }}" class="download-btn" download>Download Clip</a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="download-all">
+                <a href="{% url 'video_edit:download_all_clips' %}">Download All Clips</a>
+            </div>
+            <div class="upload-another">
+                <button onclick="window.location.href='{{ request.path }}';">Upload Another File</button>
+            </div>
+        {% else %}
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="video_file">Upload video File:</label>
+                    <input type="file" name="video_file" id="video_file" required>
+                </div>
+                <div class="form-group">
+                    <label for="clip_time">Clip Duration (in seconds):</label>
+                    <input type="number" name="clip_time" id="clip_time" min="1" required>
+                </div>
+                <button type="submit">Split video</button>
+            </form>
+        {% endif %}
+    </div>
+    {% endblock content%}

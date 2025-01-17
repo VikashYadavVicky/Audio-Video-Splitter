@@ -1,0 +1,43 @@
+{% extends 'audio_edit/base_audio_index.html' %}
+
+{% block title %}Split Audio Equally{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h1>Audio Clips</h1>
+        {% if clips %}
+            <div class="clips">
+                <h2>Generated Clips:</h2>
+                {% for clip in clips %}
+                <div class="clip">
+                    <audio controls>
+                        <source src="{{ clip }}" type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+                    <br>
+                    <a href="{{ clip }}" class="download-btn" download>Download Clip</a>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="download-all">
+                <a href="{% url 'audio_edit:download_all_clips' %}">Download All Clips</a>
+            </div>
+            <div class="upload-another">
+                <button onclick="window.location.href='{{ request.path }}';">Upload Another File</button>
+            </div>
+        {% else %}
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="form-group">
+                    <label for="audio_file">Upload Audio File:</label>
+                    <input type="file" name="audio_file" id="audio_file" required>
+                </div>
+                <div class="form-group">
+                    <label for="clip_time">Clip Duration (in seconds):</label>
+                    <input type="number" name="clip_time" id="clip_time" min="1" required>
+                </div>
+                <button type="submit">Split Audio</button>
+            </form>
+        {% endif %}
+    </div>
+    {% endblock content%}

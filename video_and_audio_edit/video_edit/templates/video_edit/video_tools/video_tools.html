@@ -1,0 +1,28 @@
+{% extends 'video_edit/base_video_index.html' %}
+
+{% block title %}Video Edit Tools{% endblock %}
+
+{% block content %}
+<section class="video-edit-tools">
+    <div class="tool">
+        <h2>Split Video</h2>
+        <p>Cut your video into multiple segments effortlessly.</p>
+        <a href="{% url 'video_edit:upload_video_and_split' %}" class="cta-btn">Try Now</a>
+    </div>
+    <div class="tool">
+        <h2>Split Equally</h2>
+        <p>Divide your video into equal parts in seconds.</p>
+        <a href="{% url "video_edit:split_video_equally" %}" class="cta-btn">Try Now</a>
+    </div>
+    <div class="tool">
+        <h2>Merge Videos</h2>
+        <p>Combine multiple videos into a single seamless file.</p>
+        <a href="{% url "video_edit:upload_and_merge_videos" %}" class="cta-btn">Try Now</a>
+    </div>
+    <div class="tool">
+        <h2>Extract Audio</h2>
+        <p>Extract and distribute frames at specified intervals.</p>
+        <a href="{% url "video_edit:upload_video_and_extract_audio" %}" class="cta-btn">Try Now</a>
+    </div> 
+</section>
+{% endblock content%}

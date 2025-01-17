@@ -1,0 +1,23 @@
+{% extends 'video_edit/base_video_index.html' %}
+
+{% block title %}Show Video{% endblock %}
+
+{% block content %}
+<section class="video-section">
+    <h2>Your Uploaded Video</h2>
+    <video controls width="100%" style="max-width: 600px; margin: 20px auto; display: block;">
+        <source src="{{ video.audio_file.url }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <p>Video Title: {{ video.title }}</p>
+    <button onclick="window.location.href='{% url 'video_edit:extractvideoForaudioupload' %}'" class="upload-btn">
+        Upload Another Video
+    </button>
+
+    <form method="POST" action="#" class="time-form">
+        {% csrf_token %}
+        <button type="submit" class="time-submit-btn">Extract</button>
+    </form>
+</section>
+{% endblock content %}
+

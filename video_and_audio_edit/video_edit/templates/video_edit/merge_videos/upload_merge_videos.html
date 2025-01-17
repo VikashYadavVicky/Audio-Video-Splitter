@@ -1,0 +1,16 @@
+{% extends 'video_edit/base_video_index.html' %}
+
+{% block title %}Merge Video{% endblock %}
+
+{% block content %}
+    <h1>Upload Videos to Merge</h1>
+    <form action="{% url "video_edit:upload_merge_videos" %}" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Upload and Merge</button>
+    </form>
+
+    {% if form.is_valid %}
+        <p><a href="{% url 'video_edit:merge_videos_result' %}">Go to Merged Video Result</a></p>
+    {% endif %}
+{% endblock content %}

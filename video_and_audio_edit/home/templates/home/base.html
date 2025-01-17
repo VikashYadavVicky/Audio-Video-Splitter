@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Title{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'home/css/navbar.css' %}">
+</head>
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="home/base.html" class="navbar-logo">Self Edit</a>
+                <button class="navbar-toggle" id="navbar-toggle" aria-label="Toggle navigation">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <ul class="navbar-links" id="navbar-links">
+                    <li><a href="{% url "home:homeindex" %}">Home</a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Login</a></li>
+                    <li><a href="#">Sign up</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Include Hero Section -->
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Transform Your Media with Ease</h1>
+            <p>Edit and split your video and audio files effortlessly.</p>
+            <a href="#video-section" class="cta-btn">Get Started</a>
+        </div>
+    </section>
+
+    <main>
+        <!-- Audio Edit Section -->
+        <section class="service-section audio-section">
+            <div class="service-container">
+                <div class="service-item">
+                    <h2>Audio Edit</h2>
+                    <p>Edit, split, and enhance your audio files with ease.</p>
+                    <a href="{% url "audio_edit:audio_tools" %}" class="cta-btn">Start Editing</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Video Edit Section -->
+        <section id="video-section" class="service-section video-section">
+            <div class="service-container">
+                <div class="service-item">
+                    <h2>Video Edit</h2>
+                    <p>Edit and enhance your video files with powerful tools.</p>
+                    <a href="{% url 'video_edit:video_tools' %}" class="cta-btn">Start Editing</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <p>&copy; 2024 Video and Audio Edit. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="#video-section">Video Tools</a></li>
+                <li><a href="#audio-section">Audio Tools</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </footer>
+    
+
+    <script src="{% static 'home/js/navbar.js' %}"></script>
+</body>
+</html>

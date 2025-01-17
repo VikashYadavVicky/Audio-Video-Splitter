@@ -1,0 +1,14 @@
+{% extends 'video_edit/base_video_index.html' %}
+
+{% block title %}Merge Final Video{% endblock %}
+
+{% block content %}
+    <video width="600" controls>
+        <source src="{{ merged_video_url }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div class="download-container">
+        <a href="{{ merged_video_url }}" download="merged_video.mp4" class="download-button">Download Merged Video</a>
+    </div>
+{% endblock content %}
